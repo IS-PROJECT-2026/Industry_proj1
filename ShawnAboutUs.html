@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define character encoding and viewport for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawn James Kuria | Developer Profile</title>
+    
+    <style>
+        /* 
+         * CSS Reset & Base Variables 
+         * Establishing a dark, IDE-inspired color palette
+         */
+        :root {
+            --bg-color: #1e1e1e;
+            --editor-bg: #252526;
+            --sidebar-bg: #333333;
+            --text-main: #d4d4d4;
+            --keyword: #c586c0;
+            --string: #ce9178;
+            --function: #dcdcaa;
+            --variable: #9cdcfe;
+            --type: #4ec9b0;
+            --comment: #6a9955;
+            --number: #b5cea8;
+            --property: #9cdcfe;
+        }
+
+        /* Universal box-sizing for consistent layout */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main body styling: centered layout with a dark theme */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Consolas', 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container mimicking a code editor window */
+        .ide-container {
+            background-color: var(--editor-bg);
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+
+        /* Top window bar with fake traffic light buttons */
+        .window-bar {
+            background-color: var(--sidebar-bg);
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #111;
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        /* Red, yellow, and green window controls */
+        .close { background-color: #ff5f56; }
+        .minimize { background-color: #ffbd2e; }
+        .maximize { background-color: #27c93f; }
+
+        .file-name {
+            margin: 0 auto;
+            color: #999;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Layout for the code editor content */
+        .editor-content {
+            display: flex;
+            padding: 20px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Line numbers sidebar */
+        .line-numbers {
+            padding: 0 15px 0 20px;
+            text-align: right;
+            color: #858585;
+            border-right: 1px solid #444;
+            user-select: none;
+        }
+
+        /* The actual code area */
+        .code-area {
+            padding: 0 20px;
+            overflow-x: auto;
+            width: 100%;
+            white-space: pre;
+        }
+
+        /* Syntax Highlighting Classes */
+        .keyword { color: var(--keyword); }
+        .string { color: var(--string); }
+        .function { color: var(--function); }
+        .variable { color: var(--variable); }
+        .type { color: var(--type); }
+        .comment { color: var(--comment); font-style: italic; }
+        .number { color: var(--number); }
+        .property { color: var(--property); }
+
+        /* Blinking cursor effect */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: var(--text-main);
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Subtle hover effect for code lines */
+        .code-line:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            display: inline-block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main IDE Window -->
+    <div class="ide-container">
+        
+        <!-- Header simulating the top of a macOS or Linux window -->
+        <div class="window-bar">
+            <div class="controls">
+                <div class="control-btn close"></div>
+                <div class="control-btn minimize"></div>
+                <div class="control-btn maximize"></div>
+            </div>
+            <div class="file-name">shawn_kuria_profile.ts</div>
+        </div>
+
+        <!-- Body of the editor containing line numbers and code -->
+        <div class="editor-content">
+            
+            <!-- JavaScript will populate the line numbers dynamically -->
+            <div class="line-numbers" id="line-numbers"></div>
+
+            <!-- Pre-formatted text block for the simulated TypeScript file -->
+            <div class="code-area">
+<div class="code-line"><span class="comment">/**</span></div>
+<div class="code-line"><span class="comment"> * Developer Profile: Shawn James Kuria</span></div>
+<div class="code-line"><span class="comment"> * Current Node: Nairobi, Kenya</span></div>
+<div class="code-line"><span class="comment"> */</span></div>
+<div class="code-line"></div>
+<div class="code-line"><span class="keyword">import</span> { <span class="type">Developer</span>, <span class="type">Project</span> } <span class="keyword">from</span> <span class="string">'./strathmore-cs/core'</span>;</div>
+<div class="code-line"></div>
+<div class="code-line"><span class="keyword">const</span> <span class="variable">shawnProfile</span>: <span class="type">Developer</span> = {</div>
+<div class="code-line">  <span class="property">name</span>: <span class="string">"Shawn James Kuria"</span>,</div>
+<div class="code-line">  <span class="property">age</span>: <span class="number">22</span>,</div>
+<div class="code-line">  <span class="property">location</span>: <span class="string">"Qwetu Wilsonview, Nairobi"</span>,</div>
+<div class="code-line">  </div>
+<div class="code-line">  <span class="comment">// Academic & Professional Background</span></div>
+<div class="code-line">  <span class="property">education</span>: <span class="string">"4th-Year Computer Science Student @ Strathmore University"</span>,</div>
+<div class="code-line">  <span class="property">workplace</span>: <span class="string">"Centric Limited"</span>,</div>
+<div class="code-line">  <span class="property">certifications</span>: [<span class="string">"PRINCE2 Foundation"</span>],</div>
+<div class="code-line"></div>
+<div class="code-line">  <span class="comment">// Core Competencies & Tech Stack</span></div>
+<div class="code-line">  <span class="property">techStack</span>: [</div>
+<div class="code-line">    <span class="string">"React"</span>, </div>
+<div class="code-line">    <span class="string">"JavaScript"</span>, </div>
+<div class="code-line">    <span class="string">"Django"</span>, </div>
+<div class="code-line">    <span class="string">"PL/SQL"</span>, </div>
+<div class="code-line">    <span class="string">"IFS Developer Studio"</span></div>
+<div class="code-line">  ],</div>
+<div class="code-line"></div>
+<div class="code-line">  <span class="comment">// Highlighted Applications</span></div>
+<div class="code-line">  <span class="property">featuredProject</span>: {</div>
+<div class="code-line">    <span class="property">title</span>: <span class="string">"Lifeline"</span>,</div>
+<div class="code-line">    <span class="property">description</span>: <span class="string">"A dedicated first-aid application."</span></div>
+<div class="code-line">  },</div>
+<div class="code-line"></div>
+<div class="code-line">  <span class="comment">// Extracurriculars & Recreation</span></div>
+<div class="code-line">  <span class="property">hobbies</span>: [</div>
+<div class="code-line">    <span class="string">"Golfing in Kiambu County"</span>,</div>
+<div class="code-line">    <span class="string">"Playing in the Qwetu Pool League"</span>,</div>
+<div class="code-line">    <span class="string">"High-altitude trekking (Mt. Kenya, Kipipiri)"</span>,</div>
+<div class="code-line">    <span class="string">"Social Deduction Games (Mafia, Imposter)"</span>,</div>
+<div class="code-line">    <span class="string">"Chronological MCU Marathons"</span></div>
+<div class="code-line">  ],</div>
+<div class="code-line"></div>
+<div class="code-line">  <span class="comment">// Fuel Requirements & Dietary Constraints</span></div>
+<div class="code-line">  <span class="property">preferences</span>: {</div>
+<div class="code-line">    <span class="property">fuelSources</span>: [<span class="string">"Coffee with milk"</span>, <span class="string">"Non-spicy meats"</span>],</div>
+<div class="code-line">    <span class="property">syntaxErrors</span>: [<span class="string">"Cheese"</span>, <span class="string">"Heavy oils"</span>] <span class="comment">// Avoid at all costs</span></div>
+<div class="code-line">  }</div>
+<div class="code-line">};</div>
+<div class="code-line"></div>
+<div class="code-line"><span class="comment">// Initialize profile render</span></div>
+<div class="code-line"><span class="keyword">export default</span> <span class="variable">shawnProfile</span>;<span class="cursor"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Post-DOM Load Initialization
+         * Generates line numbers dynamically based on the number of .code-line elements
+         * This ensures the line numbers always match the exact lines of code.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const codeLines = document.querySelectorAll('.code-line').length;
+            const lineNumbersContainer = document.getElementById('line-numbers');
+            
+            let linesHTML = '';
+            for (let i = 1; i <= codeLines; i++) {
+                linesHTML += `${i}<br>`;
+            }
+            
+            // Inject the generated numbers into the DOM
+            lineNumbersContainer.innerHTML = linesHTML;
+            
+            // System init log for debugging
+            console.log("Profile successfully compiled without warnings.");
+        });
+    </script>
+</body>
+</html>
